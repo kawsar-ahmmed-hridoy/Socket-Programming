@@ -12,12 +12,12 @@ A simple TCP socket-based chat application written in Python, supporting multipl
 
 ## 📂 Project Structure
 
-├── server.py #  server
-├── client.py # Client application
-├── multi_client_server.py # Multi-client server
-├── image.png # Visualization
-└── README.md # This documentation
-
+📁 Socket-Chat
+ ├── server.py   # Multi-client server
+ ├── client.py   # Client application
+ ├── multi_client_server.py # Multi-client server
+ ├── image.png # Visualization
+ └── README.md   # This documentation
 
 ---
 
