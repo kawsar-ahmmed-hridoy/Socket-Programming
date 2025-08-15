@@ -3,9 +3,7 @@ import threading
 
 
 def receive_messages(con, add):
-    
     print(f"Connected with {add}")
-    
     try:        
         while True:
             msg = con.recv(1024).decode()
@@ -20,7 +18,6 @@ def receive_messages(con, add):
         
 
 def send_messages(con):
-    
     try:
         while True:
             msg = input("")
