@@ -15,11 +15,11 @@ SOCKET PROGRAMMING/
 ├── Task1-Chatting with server-client/
 │   ├── client.py                    # Simple chat client
 │   ├── server.py                    # Single client chat server
-│   └── multi\_client\_server.py     # Multi-client chat server
+│   └── multi_client_server.py     # Multi-client chat server
 │
 ├── Task2-File Manipulation/
-│   ├── file\_client.py         # Client for file operations
-│   └── file\_server.py         # Server for file operations
+│   ├── file_client.py         # Client for file operations
+│   └── file_server.py         # Server for file operations
 │
 ├── image.png                  # Visualization of building connection
 └── README.md                  # Directions
@@ -40,24 +40,23 @@ SOCKET PROGRAMMING/
 #### Single Client
 1. Run the server:
 
-   python Task1-Chatting\ with\ server-client/server.py
+   python 'Task1-Chatting with server-client'/server.py
 
 
 2. Run the client (in a separate terminal):
 
-   python Task1-Chatting\ with\ server-client/client.py
+   python 'Task1-Chatting with server-client'/client.py
 
 
 #### Multi-Client
 
 1. Run the multi-client server:
 
-   python Task1-Chatting\ with\ server-client/multi_client_server.py
+   python 'Task1-Chatting with server-client'/multi_client_server.py
 
 2. Run multiple clients in different terminals:
 
-
-   python Task1-Chatting\ with\ server-client/client.py
+   python 'Task1-Chatting with server-client'/client.py
    
 
 ---
@@ -67,13 +66,13 @@ SOCKET PROGRAMMING/
 #### Start the Server
 
 
-python Task2-File\ Manipulation/file_server.py
+python 'Task2-File Manipulation'/file_server.py
 
 
 #### Start the Client
 
 
-python Task2-File\ Manipulation/file_client.py
+python 'Task2-File Manipulation'/file_client.py
 
 
 #### Available Commands
