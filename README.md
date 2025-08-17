@@ -1,50 +1,109 @@
-# Socket Programming: Combined Chat & File Server Application
+# 🖧 Socket Programming in Python
 
-A simple TCP socket-based chat application written in Python, supporting multiple clients via threading.
-
-## 📌 Features
-- **Multiple Clients**: Many clients can connect to the server at the same time.
-- **Real-Time Chat**: Messages are broadcast to all connected clients.
-- **Threaded Connections**: Each client is handled in a separate thread for simultaneous communication.
-- **Exit Command**: Type `exit` in a client to disconnect gracefully.
+This project demonstrates **basic socket programming** concepts in Python through two tasks:  
+1. **Chatting with server-client (single & multi-client)**  
+2. **File Manipulation (list, upload, download, delete)**  
 
 ---
 
 ## 📂 Project Structure
 
-📁 Socket-Chat
- ├── server.py   # Multi-client server
- ├── client.py   # Client application
- ├── multi_client_server.py # Multi-client server
- ├── image.png # Visualization
- └── README.md   # This documentation
+```
 
----
+SOCKET PROGRAMMING/
+│
+├── Task1-Chatting with server-client/
+│   ├── client.py                    # Simple chat client
+│   ├── server.py                    # Single client chat server
+│   └── multi\_client\_server.py     # Multi-client chat server
+│
+├── Task2-File Manipulation/
+│   ├── file\_client.py         # Client for file operations
+│   └── file\_server.py         # Server for file operations
+│
+├── image.png                  # Visualization of building connection
+└── README.md                  # Directions
+
+````
 
 ## ⚙️ Requirements
-- Python **3.7+** (Tested with Python 3.10+)
-- No external dependencies (uses Python's built-in `socket` and `threading`)
+
+- Python 3.x  
+- No external libraries required (uses built-in `socket`, `threading`, `os`)  
 
 ---
 
-## 🚀 How to Run (bash)
+## 🚀 How to Run
 
-### 1️⃣ Start the Server
+### 🔹 Task 1: Chatting with Server-Client
 
-python server.py
+#### Single Client
+1. Run the server:
 
-### 2️⃣ Start a Client
-
-python client.py
-
-### 3️⃣ Connect More Clients
-
-python multi_client_server.py
-
-python client1.py
-
-python client2.py
-
-python client3.py
+   python Task1-Chatting\ with\ server-client/server.py
 
 
+2. Run the client (in a separate terminal):
+
+   python Task1-Chatting\ with\ server-client/client.py
+
+
+#### Multi-Client
+
+1. Run the multi-client server:
+
+   python Task1-Chatting\ with\ server-client/multi_client_server.py
+
+2. Run multiple clients in different terminals:
+
+
+   python Task1-Chatting\ with\ server-client/client.py
+   
+
+---
+
+### 🔹 Task 2: File Manipulation
+
+#### Start the Server
+
+
+python Task2-File\ Manipulation/file_server.py
+
+
+#### Start the Client
+
+
+python Task2-File\ Manipulation/file_client.py
+
+
+#### Available Commands
+
+Inside the client, you can enter:
+
+* `list` → Show files on the server
+* `upload <filename>` → Upload file to server
+* `download <filename>` → Download file from server
+* `delete <filename>` → Delete file from server
+* `exit` → Disconnect
+
+---
+
+## 📌 Notes
+
+* Run server **before** running the client.
+* Use `127.0.0.1` (localhost) to test locally.
+* Modify `ip` and `port` in scripts if needed.
+
+---
+
+## 🏆 Learning Outcomes
+
+* Understanding **socket communication** (TCP).
+* Handling **multiple clients** using `threading`.
+* Implementing **file transfer protocols** with sockets.
+
+---
+
+✍️ Author: Kawsar Ahmmed Hridoy
+
+```
