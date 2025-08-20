@@ -18,10 +18,12 @@ SOCKET PROGRAMMING/
 │   └── multi_client_server.py     # Multi-client chat server
 │
 ├── Task2-File Manipulation/
+│   ├── server_files           # Store uploaded files
 │   ├── file_client.py         # Client for file operations
 │   └── file_server.py         # Server for file operations
 │
 ├── image.png                  # Visualization of building connection
+├── Folder                     # Store files initially
 └── README.md                  # Directions
 
 ````
