@@ -4,39 +4,47 @@ import os
 ip = '127.0.0.1'
 port = 6000
 
+client_folder = r"E:\Socket Programming\Folder"
+os.makedirs(client_folder, exist_ok=True)
+
 
 def list_files(client):
     print(client.recv(4096).decode())
 
 
 def upload_file(client, filename):
-    if os.path.exists(filename):
-        if client.recv(1024) == b"READY":
-            with open(filename, "rb") as f:
+    filepath = os.path.join(client_folder, filename)
+    if os.path.exists(filepath):
+        response = client.recv(1024).decode()
+        if response == "READY":
+            with open(filepath, "rb") as f:
                 for chunk in iter(lambda: f.read(1024), b''):
                     client.send(chunk)
             client.send(b"EOF")
             print(client.recv(1024).decode())
+        else:
+            print(f"Unexpected server response: {response}")
     else:
-        print("File not found.")
+        print(f"File not found in {client_folder}")
+
 
 
 def download_file(client, filename):
+    filepath = os.path.join(client_folder, filename)
     if client.recv(1024) == b"READY":
-        with open(filename, "wb") as f:
+        with open(filepath, "wb") as f:
             while True:
                 data = client.recv(1024)
                 if data == b"EOF":
                     break
                 f.write(data)
-        print("Download complete.")
+        print(f"Download complete. Saved to {filepath}")
     else:
         print("File not found on server.")
 
 
 def delete_file(client, filename):
     print(client.recv(1024).decode())
-
 
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -50,7 +58,7 @@ except Exception as e:
     exit()
 
 while True:
-    cmd = input("\nEnter command (list, upload <file>, download <file>, delete <file>, exit): ").strip()
+    cmd = input("\nEnter command (list, upload file.ext, download file.ext, delete file.ext, exit): ").strip()
     if not cmd:
         continue
 
